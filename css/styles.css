@@ -109,7 +109,7 @@ nav h1 a {
 /* ====================== Map ====================== */
 #map {
   height: 400px;
-  width: 100%;
+  width: 50%;
   background-color: #ccc;
 }
 /* ====================== Restaurant Filtering ====================== */
@@ -154,7 +154,7 @@ nav h1 a {
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  width: 100%;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -249,8 +249,8 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 40px;
-	/* fixed the silly padding */
+  padding: 40px 0px 0px 10px;
+	/* fixed the silly padding which invaded the map*/
   width: 50%;
 }
 #reviews-container {
@@ -285,4 +285,20 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+@media only screen and (max-width : 680px) {
+/* Styles */
+.inside #map-container {
+	visibility: hidden;
+}
+
+.inside #footer, #restaurant-container, #reviews-container {
+	width: 100%
+}
+
+#breadcrumb, #footer {
+	width: calc(100% - 80px);
+}
+
 }
