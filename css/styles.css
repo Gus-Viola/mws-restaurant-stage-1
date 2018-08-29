@@ -33,7 +33,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 20px;
 }
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+	display: flex;
+	flex-flow: column;
 }
 #maincontent {
   background-color: #f3f3f3;
@@ -45,11 +46,16 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer {
   background-color: #444;
   color: #aaa;
-  font-size: 8pt;
+  /* font-size: 8pt; */
   letter-spacing: 1px;
-  padding: 25px;
+  padding: 40px 0px;
+	/* less padding for footer */
   text-align: center;
   text-transform: uppercase;
+	font-size: 17px;
+	margin: 0;
+	width: calc(50% - 80px);
+
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -207,7 +213,8 @@ nav h1 a {
 }
 .inside #footer {
   bottom: 0;
-  position: absolute;
+  position: relative;
+	/* removed absolute position of footer */
   width: 50%;
 }
 #restaurant-name {
@@ -242,11 +249,13 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 1	40px 40px 30px;
+  padding: 40px;
+	/* fixed the silly padding */
   width: 50%;
 }
 #reviews-container {
-  padding: 30px 40px 80px;
+  padding: 5px;
+	/* less padding to correct display */
 }
 #reviews-container h2 {
   color: #f58500;
@@ -266,7 +275,8 @@ nav h1 a {
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  padding: 20px;
+	/* improve visibility of li items with 20px padding all around */
   position: relative;
   width: 85%;
 }
