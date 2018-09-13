@@ -145,17 +145,21 @@ resetRestaurants = (restaurants) => {
  * Create all restaurants HTML and add them to the webpage.
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
+  let tabOrder = 4;
   const ul = document.getElementById('restaurants-list');
   restaurants.forEach(restaurant => {
-    ul.append(createRestaurantHTML(restaurant));
+    ul.append(createRestaurantHTML(restaurant, tabOrder));
+    tabOrder++;
   });
   addMarkersToMap();
 }
 
 /**
  * Create restaurant HTML.
+ * Gus Viola: modified function to include tabindex, tabOrder attribute
+ * and aria-label
  */
-createRestaurantHTML = (restaurant) => {
+createRestaurantHTML = (restaurant, tabOrder) => {
   const li = document.createElement('li');
 
   const image = document.createElement('img');
@@ -181,6 +185,10 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  // Gus Viola: added the two lines below
+  more.setAttribute('tabindex', tabOrder.toString());
+  more.setAttribute('aria-label', 'Further Information for ' + restaurant.name);
+
   li.append(more)
 
   return li
