@@ -165,7 +165,7 @@ nav h1 a {
 	max-width: 320px;
   /* width: 100%; */
 }
-#restaurants-list .restaurant-img {
+#restaurants-list .restaurant-img{
   background-color: #ccc;
   display: block;
   margin: 0;
@@ -250,6 +250,8 @@ nav h1 a {
 }
 #reviews-container {
   padding: 5px;
+	/* less padding to correct display */
+		/* border-top: inherit; /*NEEDED?*/
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -292,11 +294,18 @@ nav h1 a {
 
 #restaurant-address, #restaurant-hours{
 	padding-left: 50px;
+	line-height: 1.5;
+	font-size: 10pt;
 }
+
+#restaurant-address {
+	font-size: 22pt;
+}
+
 
 #restaurant-address, #restaurant-hours td {
   color: #666;
-	font-size: 1.5rem;
+	/* font-size: 1em; */
 	/*this font has to match the restaurant review*/
   font-weight: 300;
 }
