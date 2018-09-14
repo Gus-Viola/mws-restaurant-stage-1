@@ -1,6 +1,12 @@
 @charset "utf-8";
 /* CSS Document */
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+/* the above lines eliminate horizontal scrolling */
+
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
@@ -120,7 +126,8 @@ nav h1 a {
   width: 100%;
   background-color: #3397DB;
   align-items: center;
-	padding: 20px;
+	padding: 20px 0px;
+	/* this padding was the culprit for the overflowing horizontal scroll */
 }
 .filter-options h2 {
   color: white;
@@ -354,7 +361,7 @@ nav h1 a {
 
 @media screen and (min-width: 900px) {
   .container {
-    width: 900px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -373,8 +380,13 @@ nav h1 a {
 
 @media screen and (min-width: 920px) {
   .logo {
-    width: 900px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
